@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Boulevard to discuss brand design, web development, motion graphics, and art direction."
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Boulevard Contact</title>
+  </head>
+  <body class="contact-page">
+    <main class="contact-main">
+      <div class="contact-board">
+        <header class="contact-header">
+          <nav class="navigation-bar" aria-label="Primary navigation">
+            <a href="index.html" aria-label="Homepage">
+              <img
+                src="../assets/logo_without_background_efeeec.png"
+                alt="Hadeon logo"
+              />
+            </a>
+            <ul class="what-we-do">
+              <li>BRAND STRATEGY</li>
+              <li>PRODUCT DESIGN</li>
+              <li>WEBSITE DEVELOPMENT</li>
+            </ul>
+            <small class="courtesy">&copy; 2025</small>
+            <button class="menu-link" type="button" aria-label="Open menu">
+              MENU
+            </button>
+          </nav>
+        </header>
+
+        <section class="contact-section" aria-labelledby="contact-heading">
+          <div class="contact-details">
+            <h1 id="contact-heading" class="contact-heading">Contact us</h1>
+
+            <div class="contact-info-grid">
+              <div class="contact-info-block">
+                <p class="contact-label">EMAIL ADDRESS</p>
+                <p class="contact-value">hello@boulevard.com</p>
+              </div>
+
+              <div class="contact-info-block">
+                <p class="contact-label">PHONE</p>
+                <p class="contact-value">+626 9817 268</p>
+              </div>
+
+              <div class="contact-info-block contact-info-block--address">
+                <p class="contact-label">ADDRESS</p>
+                <p class="contact-value">
+                  Suite 9<br />
+                  12 Wellington Place<br />
+                  Melbourne, VIC 3000<br />
+                  Australia
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-shell">
+            <form class="contact-form">
+              <label class="contact-field">
+                <span class="contact-field__label">Name</span>
+                <input type="text" placeholder="Enter your name" />
+              </label>
+
+              <label class="contact-field">
+                <span class="contact-field__label">Email Address</span>
+                <input type="email" placeholder="Enter your e-mail" />
+              </label>
+
+              <label class="contact-field contact-field--message">
+                <span class="contact-field__label">Message</span>
+                <textarea placeholder="Your message..."></textarea>
+              </label>
+
+              <button class="contact-submit button-primary" type="submit">
+                <span
+                  class="button-primary__corner button-primary__corner--tl"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="button-primary__corner button-primary__corner--tr"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="button-primary__corner button-primary__corner--bl"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="button-primary__corner button-primary__corner--br"
+                  aria-hidden="true"
+                ></span>
+                <span class="button-primary__text">Submit message</span>
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

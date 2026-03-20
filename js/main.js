@@ -169,7 +169,7 @@ const offerCards = offerStage
   : [];
 
 if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
-  const stackedOffersMedia = window.matchMedia("(min-width: 981px)");
+  const stackedOffersMedia = window.matchMedia("(min-width: 1101px)");
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
@@ -179,7 +179,6 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
   const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
-  const offerHoldPadding = 0.14;
 
   const setStaticOffers = () => {
     offerKicker.textContent = offerCards[0].dataset.offerLabel || "Web Dev";
@@ -193,6 +192,21 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
       card.style.removeProperty("opacity");
       card.style.removeProperty("z-index");
     });
+
+    offerStage.style.removeProperty("height");
+  };
+
+  const syncOfferStageHeight = () => {
+    if (!stackedOffersMedia.matches || prefersReducedMotion) {
+      offerStage.style.removeProperty("height");
+      return;
+    }
+
+    // Give each card reveal a little more runway so the stack transitions
+    // feel slower and more deliberate without reintroducing dead drag.
+    const extraPerCardVh = 40;
+    const stageHeightVh = 100 + (offerCards.length - 1) * extraPerCardVh;
+    offerStage.style.height = `${stageHeightVh}vh`;
   };
 
   const getOfferPhase = () => {
@@ -202,12 +216,7 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
       1
     );
     const progress = clamp((-stageRect.top) / scrollRange, 0, 1);
-    const usableProgress = clamp(
-      (progress - offerHoldPadding) / (1 - offerHoldPadding * 2),
-      0,
-      1
-    );
-    const rawPhase = usableProgress * (offerCards.length - 1);
+    const rawPhase = progress * (offerCards.length - 1);
     const segment = Math.floor(rawPhase);
     const segmentProgress = rawPhase - segment;
 
@@ -286,7 +295,7 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
   };
 
   const animateOfferStack = () => {
-    currentPhase += (targetPhase - currentPhase) * 0.14;
+    currentPhase += (targetPhase - currentPhase) * 0.08;
 
     if (Math.abs(targetPhase - currentPhase) < 0.0015) {
       currentPhase = targetPhase;
@@ -325,12 +334,19 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
   if (!stackedOffersMedia.matches || prefersReducedMotion) {
     setStaticOffers();
   } else {
+    syncOfferStageHeight();
     targetPhase = getOfferPhase();
     currentPhase = targetPhase;
     renderOfferStack(currentPhase);
   }
 
   window.addEventListener("scroll", scheduleOfferRender, { passive: true });
-  window.addEventListener("resize", scheduleOfferRender);
-  stackedOffersMedia.addEventListener("change", scheduleOfferRender);
+  window.addEventListener("resize", () => {
+    syncOfferStageHeight();
+    scheduleOfferRender();
+  });
+  stackedOffersMedia.addEventListener("change", () => {
+    syncOfferStageHeight();
+    scheduleOfferRender();
+  });
 }
