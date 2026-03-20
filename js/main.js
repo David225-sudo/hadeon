@@ -35,6 +35,42 @@ primaryButtons.forEach((button) => {
   });
 });
 
+// overlay menu
+const siteMenu = document.querySelector(".site-menu");
+const menuTriggers = document.querySelectorAll(".menu-link");
+const menuCloseButton = document.querySelector(".site-menu__close");
+const menuLinks = document.querySelectorAll(".site-menu__link");
+
+if (siteMenu && menuTriggers.length > 0 && menuCloseButton) {
+  const openMenu = () => {
+    siteMenu.classList.add("is-open");
+    siteMenu.setAttribute("aria-hidden", "false");
+    document.body.classList.add("menu-open");
+  };
+
+  const closeMenu = () => {
+    siteMenu.classList.remove("is-open");
+    siteMenu.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("menu-open");
+  };
+
+  menuTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openMenu);
+  });
+
+  menuCloseButton.addEventListener("click", closeMenu);
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteMenu.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+}
+
 // solutions video control
 const solutionVideo = document.querySelector(".video video");
 const solutionVideoButton = document.querySelector(".video-play-button");
