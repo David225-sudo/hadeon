@@ -459,3 +459,30 @@ if (offerStage && offerSticky && offerKicker && offerCards.length > 0) {
     scheduleOfferRender();
   });
 }
+
+// back to top
+const backToTopButtons = document.querySelectorAll("[data-back-to-top]");
+
+if (backToTopButtons.length > 0) {
+  const toggleBackToTopVisibility = () => {
+    const shouldShow = window.scrollY > window.innerHeight * 0.9;
+
+    backToTopButtons.forEach((button) => {
+      button.classList.toggle("is-visible", shouldShow);
+    });
+  };
+
+  backToTopButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  toggleBackToTopVisibility();
+  window.addEventListener("scroll", toggleBackToTopVisibility, {
+    passive: true,
+  });
+}
