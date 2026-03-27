@@ -4265,13 +4265,16 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .navigation-bar {
-    grid-template-columns: auto auto;
-    grid-template-areas:
-      "logo menu"
-      "year year"
-      "services services";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 0.9rem 1rem;
     padding: 0.9rem 1rem;
+  }
+
+  .what-we-do,
+  .courtesy {
+    display: none;
   }
 
   .navigation-bar img {
@@ -4279,8 +4282,6 @@ body.menu-open {
     height: 64px;
   }
 
-  .what-we-do li,
-  .courtesy,
   .menu-link {
     font-size: 0.75rem;
   }
@@ -4913,6 +4914,32 @@ body {
   .contact-form {
     padding: 1.9rem 1.5rem 1.6rem;
   }
+
+  .contact-section {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-details {
+    max-width: 36rem;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .contact-info-grid {
+    justify-content: center;
+  }
+
+  .contact-info-block {
+    justify-self: center;
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .contact-form-shell {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 767px) {
@@ -4961,6 +4988,27 @@ body {
     font-size: 0.94rem;
   }
 
+  .contact-section {
+    gap: 2.1rem;
+    padding-top: 2.4rem;
+  }
+
+  .contact-details {
+    max-width: 24rem;
+  }
+
+  .contact-info-grid {
+    gap: 1.4rem;
+  }
+
+  .contact-info-block {
+    max-width: 18rem;
+  }
+
+  .contact-form {
+    max-width: 24rem;
+  }
+
   .back-to-top {
     width: 2.8rem;
     height: 2.8rem;
@@ -4979,6 +5027,19 @@ body {
   .contact-field input,
   .contact-field textarea {
     font-size: 0.9rem;
+  }
+
+  .contact-section {
+    gap: 1.8rem;
+    padding-top: 2rem;
+  }
+
+  .contact-details {
+    max-width: 20rem;
+  }
+
+  .contact-form {
+    max-width: 20rem;
   }
 
   .back-to-top {
@@ -5338,5 +5399,133 @@ body {
 
   .contact-form {
     padding: 1.25rem 0.95rem 1.1rem;
+  }
+}
+
+/* global desktop responsiveness */
+@media (min-width: 1280px) {
+  .container {
+    width: min(92vw, 1500px);
+  }
+
+  .vision-shell,
+  .metrics-shell,
+  .offer-shell,
+  .site-footer__shell,
+  .about-shell,
+  .project-shell,
+  .contact-cta-shell {
+    width: min(92vw, 1720px);
+  }
+
+  .faq-shell {
+    width: min(88vw, 1140px);
+  }
+
+  .license-shell {
+    width: min(92vw, 1320px);
+  }
+}
+
+@media (min-width: 1536px) {
+  .contact-header {
+    width: min(92vw, 1720px);
+    margin: 0 auto;
+    padding: 1.5rem 0 0;
+  }
+
+  .contact-section {
+    width: min(92vw, 1720px);
+    margin: 0 auto;
+    min-height: calc(100vh - 6rem);
+    grid-template-columns: minmax(360px, 0.86fr) minmax(620px, 1fr);
+    gap: clamp(3rem, 5vw, 6.5rem);
+    padding: clamp(2rem, 3vw, 3rem) 0 clamp(2.5rem, 3.5vw, 3.5rem);
+  }
+
+  .contact-details {
+    max-width: 34rem;
+    padding-left: 0;
+  }
+
+  .contact-heading {
+    font-size: clamp(3.9rem, 4.9vw, 5rem);
+    margin-bottom: 2.75rem;
+  }
+
+  .contact-info-grid {
+    gap: 2.25rem 3rem;
+  }
+
+  .contact-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .contact-value {
+    font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+  }
+
+  .contact-form {
+    width: min(100%, 46rem);
+    padding: clamp(2.4rem, 3vw, 3rem) clamp(2.2rem, 2.8vw, 2.85rem)
+      clamp(2rem, 2.8vw, 2.5rem);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  }
+
+  .contact-field {
+    padding-bottom: 1.05rem;
+    margin-bottom: 1.55rem;
+  }
+
+  .contact-field--message {
+    margin-bottom: 2.25rem;
+  }
+
+  .contact-field__label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 1.04rem;
+    line-height: 1.6;
+  }
+
+  .contact-field textarea {
+    min-height: 8.5rem;
+  }
+
+  .contact-submit.button-primary {
+    min-width: 10.75rem;
+    height: 3.1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navigation-bar,
+  .hero-section {
+    width: min(92vw, 1720px);
+    margin: 0 auto;
+  }
+
+  .hero-left-top h1 {
+    max-width: 15ch;
+  }
+
+  .solutions-top {
+    max-width: 42rem;
+  }
+
+  .faq-content,
+  .faq-list {
+    max-width: 43rem;
+  }
+
+  .site-footer__top {
+    gap: clamp(2.5rem, 3vw, 4rem);
   }
 }
