@@ -5529,3 +5529,148 @@ body {
     gap: clamp(2.5rem, 3vw, 4rem);
   }
 }
+
+/* 404 page */
+.not-found-page {
+  min-height: 100vh;
+  background: var(--black-color-shade-1);
+  color: var(--white-color-shade-1);
+}
+
+.not-found-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.not-found-hero {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 1780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 4.75rem;
+}
+
+.not-found-grid {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 8rem);
+}
+
+.not-found-copy {
+  max-width: 46rem;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.not-found-kicker {
+  color: rgba(239, 238, 236, 0.6);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.1rem;
+}
+
+.not-found-code {
+  color: rgba(239, 238, 236, 0.18);
+  font-size: clamp(5.5rem, 16vw, 13rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+  margin-bottom: 0.8rem;
+}
+
+.not-found-title {
+  max-width: 12ch;
+  font-size: clamp(2.9rem, 6vw, 5.7rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  margin-bottom: 1.35rem;
+}
+
+.not-found-description {
+  max-width: 36rem;
+  color: rgba(239, 238, 236, 0.8);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 2rem 0 2.1rem;
+}
+
+.not-found-actions .button-primary {
+  width: auto;
+  min-width: 10.4rem;
+  padding: 0 1.35rem;
+}
+
+@media (max-width: 1200px) {
+  .not-found-hero {
+    width: min(100%, 100%);
+    padding: 1.25rem 1.75rem 4rem;
+  }
+
+  .not-found-grid {
+    min-height: auto;
+  }
+
+  .not-found-copy,
+  .not-found-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .not-found-hero {
+    padding: 1rem 1rem 3rem;
+  }
+
+  .not-found-kicker {
+    font-size: 0.76rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .not-found-code {
+    font-size: clamp(4.5rem, 24vw, 7rem);
+  }
+
+  .not-found-title {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    max-width: 10ch;
+  }
+
+  .not-found-description {
+    font-size: 0.95rem;
+  }
+
+  .not-found-actions .button-primary {
+    width: 100%;
+    min-width: 0;
+  }
+
+}
+
+@media (min-width: 1536px) {
+  .not-found-title {
+    font-size: clamp(4.4rem, 5.7vw, 6.4rem);
+  }
+
+  .not-found-description {
+    max-width: 40rem;
+    font-size: 1.16rem;
+  }
+}
