@@ -63,7 +63,7 @@ body {
   position: absolute;
   inset: 0;
   background: var(--white-color-shade-1);
-  border-radius: 0.2rem;
+  border-radius: 0;
   opacity: 1;
   transform: scale(1);
   transition:
@@ -1769,7 +1769,7 @@ body.menu-open {
 .contact-cta-button {
   color: var(--black-color-shade-1);
   background: var(--white-color-shade-1);
-  border-radius: 999px;
+  border-radius: 0;
   min-width: 10.4rem;
   height: 3rem;
   padding: 0 1.25rem;
@@ -2078,12 +2078,6 @@ body.menu-open {
   transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.site-footer__social--twitter,
-.site-footer__social--instagram {
-  width: 1rem;
-  height: 1rem;
-}
-
 .site-footer__social:hover {
   opacity: 1;
 }
@@ -2097,6 +2091,11 @@ body.menu-open {
 
 .site-footer__social svg {
   fill: currentColor;
+}
+
+.site-footer__social[aria-label="LinkedIn"] svg {
+  transform: scale(1.15);
+  transform-origin: center;
 }
 
 .site-footer__bottom {
@@ -2178,12 +2177,6 @@ body.menu-open {
   .site-footer__social {
     width: 1.1rem;
     height: 1.1rem;
-  }
-
-  .site-footer__social--twitter,
-  .site-footer__social--instagram {
-    width: 0.92rem;
-    height: 0.92rem;
   }
 
   .site-footer__links {
@@ -2927,14 +2920,14 @@ body.menu-open {
 
 .project-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.76fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(2.5rem, 5vw, 6rem);
   align-items: start;
 }
 
 .project-details {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-areas:
     "email phone"
     ". linkedin"
@@ -3001,7 +2994,7 @@ body.menu-open {
 }
 
 .project-visual {
-  width: min(100%, 19rem);
+  width: min(100%, 24rem);
   aspect-ratio: 0.86;
   overflow: hidden;
   border-radius: 1.4rem;
@@ -3137,7 +3130,7 @@ body.menu-open {
   }
 
   .project-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.66fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem;
   }
 
@@ -3291,7 +3284,7 @@ body.menu-open {
   }
 
   .project-visual {
-    width: min(100%, 16rem);
+    width: min(100%, 20rem);
   }
 
   .license-hero {
@@ -3492,7 +3485,7 @@ body.menu-open {
   }
 
   .project-visual {
-    width: min(100%, 14rem);
+    width: min(100%, 18rem);
     border-radius: 1.2rem;
   }
 
@@ -3690,9 +3683,9 @@ body.menu-open {
 
 .contact-value {
   color: var(--white-color-shade-1);
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.28;
+  line-height: 1.4;
 }
 
 .contact-form-shell {
@@ -3812,7 +3805,7 @@ body.menu-open {
   }
 
   .contact-value {
-    font-size: 1.05rem;
+    font-size: 17px;
   }
 
   .contact-form {
@@ -4481,7 +4474,7 @@ body.menu-open {
   }
 
   .contact-value {
-    font-size: 1rem;
+    font-size: 17px;
   }
 
   .contact-form {
@@ -4814,8 +4807,8 @@ body {
   }
 
   .contact-value {
-    font-size: 1.38rem;
-    line-height: 1.35;
+    font-size: 17px;
+    line-height: 1.4;
   }
 
   .contact-form {
@@ -4972,7 +4965,7 @@ body {
   }
 
   .contact-value {
-    font-size: 1.1rem;
+    font-size: 17px;
   }
 
   .contact-form {
@@ -5156,7 +5149,7 @@ body {
   }
 
   .project-visual {
-    width: min(100%, 17rem);
+    width: min(100%, 20rem);
   }
 }
 
@@ -5320,7 +5313,7 @@ body {
   }
 
   .project-visual {
-    width: min(100%, 14.5rem);
+    width: min(100%, 16.5rem);
     border-radius: 1rem;
   }
 }
@@ -5394,7 +5387,7 @@ body {
   }
 
   .project-visual {
-    width: min(100%, 13rem);
+    width: min(100%, 15rem);
   }
 
   .contact-form {
@@ -5463,7 +5456,7 @@ body {
   }
 
   .contact-value {
-    font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+    font-size: 17px;
   }
 
   .contact-form {
@@ -5672,5 +5665,24 @@ body {
   .not-found-description {
     max-width: 40rem;
     font-size: 1.16rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .video {
+    max-height: clamp(520px, 36vw, 620px);
+  }
+
+  .video video {
+    height: clamp(520px, 36vw, 620px);
+  }
+
+  .offer-shell {
+    width: min(82vw, 1240px);
+  }
+
+  .offer-stack {
+    max-width: 1140px;
+    margin: 0 auto;
   }
 }
