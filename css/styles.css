@@ -5732,6 +5732,14 @@ body {
 
 /* phone-only polish */
 @media (max-width: 767px) {
+  .hero-wrapper {
+    background-position: 58% center;
+  }
+
+  .navigation-bar {
+    padding: 0.9rem 1rem;
+  }
+
   .hero-section {
     min-height: calc(100svh - 5.5rem);
     align-items: center;
@@ -5778,6 +5786,11 @@ body {
     line-height: 1.6;
   }
 
+  .button-primary {
+    width: auto;
+    min-width: 10rem;
+  }
+
   .solutions-top,
   .faq-content {
     max-width: 21rem;
@@ -5791,6 +5804,27 @@ body {
 
   .video {
     border-radius: 0.9rem;
+  }
+
+  .solutions-bottom {
+    margin-top: 2rem;
+  }
+
+  .video video {
+    height: min(68vw, 290px);
+  }
+
+  .video-caption {
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    max-width: 15rem;
+    font-size: 0.76rem;
+  }
+
+  .vision-line {
+    font-size: clamp(1.95rem, 8.8vw, 2.5rem);
+    line-height: 1.12;
   }
 
   .metrics-card,
@@ -5815,6 +5849,19 @@ body {
     padding: 1.2rem 1.1rem 1.25rem;
   }
 
+  .metrics-grid {
+    gap: 0.9rem;
+  }
+
+  .metrics-card {
+    min-height: 12.5rem;
+    padding: 1rem 0.95rem 0.95rem;
+  }
+
+  .metrics-card__value {
+    font-size: clamp(2rem, 11vw, 2.6rem);
+  }
+
   .offer-header {
     margin-bottom: 1.75rem;
   }
@@ -5827,8 +5874,33 @@ body {
     padding: 1.05rem 1rem 1rem;
   }
 
+  .offer-copy {
+    min-height: auto;
+  }
+
+  .offer-price--plans {
+    font-size: 1.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .offer-meta p,
+  .offer-subtitle,
+  .offer-features-heading,
+  .offer-features li {
+    font-size: 0.84rem;
+  }
+
   .contact-cta-panel {
     max-width: 20rem;
+  }
+
+  .contact-cta-title {
+    font-size: clamp(1.8rem, 8vw, 2.15rem);
+    max-width: 17rem;
+  }
+
+  .faq-list {
+    max-width: 100%;
   }
 
   .site-footer__top {
@@ -5847,6 +5919,10 @@ body {
   .site-footer__bottom {
     align-items: center;
     text-align: center;
+  }
+
+  .site-footer__mail {
+    word-break: break-word;
   }
 
   .contact-section {
@@ -5875,9 +5951,43 @@ body {
   .contact-form {
     width: min(100%, 24rem);
   }
+
+  .about-page-title {
+    font-size: clamp(2.5rem, 12vw, 3.3rem);
+  }
+
+  .about-feature__copy h2,
+  .about-recent-work__intro h2 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .about-proof-card--image {
+    min-height: 19rem;
+  }
+
+  .project-title {
+    max-width: none;
+    font-size: clamp(2.25rem, 12vw, 2.9rem);
+  }
+
+  .project-year {
+    font-size: clamp(2rem, 10vw, 2.45rem);
+  }
+
+  .project-visual {
+    width: min(100%, 17.5rem);
+  }
+
+  .not-found-copy {
+    max-width: 21rem;
+  }
 }
 
 @media (max-width: 479px) {
+  .navigation-bar {
+    padding: 0.85rem 0.85rem;
+  }
+
   .hero-section {
     padding: 1rem 0.85rem 1.85rem;
   }
@@ -5892,15 +6002,41 @@ body {
     font-size: clamp(2.15rem, 11vw, 2.65rem);
   }
 
+  .hero-left-bottom p {
+    max-width: 17.5rem;
+    font-size: 0.92rem;
+  }
+
+  .button-primary {
+    min-width: 9.4rem;
+    height: 2.9rem;
+  }
+
   .solutions-top,
   .faq-content {
     max-width: 18.5rem;
+  }
+
+  .video video {
+    height: min(72vw, 250px);
+  }
+
+  .metrics-card__value {
+    font-size: 2.15rem;
   }
 
   .site-footer__copy,
   .contact-details,
   .contact-form {
     max-width: 18.5rem;
+  }
+
+  .contact-cta-title {
+    max-width: 15.5rem;
+  }
+
+  .project-visual {
+    width: min(100%, 16rem);
   }
 }
 
