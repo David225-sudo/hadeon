@@ -1,5 +1,6 @@
 // button amination
 const primaryButtons = document.querySelectorAll(".button-primary");
+const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
 
 const navigationEntry = performance.getEntriesByType("navigation")[0];
 
@@ -18,16 +19,18 @@ if (navigationEntry?.type === "reload") {
 }
 
 primaryButtons.forEach((button) => {
-  button.addEventListener("pointermove", (event) => {
-    const bounds = button.getBoundingClientRect();
-    const offsetX = event.clientX - bounds.left - bounds.width / 2;
-    const offsetY = event.clientY - bounds.top - bounds.height / 2;
-    const moveX = (offsetX / (bounds.width / 2)) * 6;
-    const moveY = (offsetY / (bounds.height / 2)) * 4;
+  if (supportsFinePointer) {
+    button.addEventListener("pointermove", (event) => {
+      const bounds = button.getBoundingClientRect();
+      const offsetX = event.clientX - bounds.left - bounds.width / 2;
+      const offsetY = event.clientY - bounds.top - bounds.height / 2;
+      const moveX = (offsetX / (bounds.width / 2)) * 6;
+      const moveY = (offsetY / (bounds.height / 2)) * 4;
 
-    button.style.setProperty("--button-shift-x", `${moveX}px`);
-    button.style.setProperty("--button-shift-y", `${moveY}px`);
-  });
+      button.style.setProperty("--button-shift-x", `${moveX}px`);
+      button.style.setProperty("--button-shift-y", `${moveY}px`);
+    });
+  }
 
   button.addEventListener("pointerleave", () => {
     button.style.setProperty("--button-shift-x", "0px");
@@ -62,6 +65,11 @@ if (siteMenu && menuTriggers.length > 0 && menuCloseButton) {
   });
 
   menuCloseButton.addEventListener("click", closeMenu);
+  siteMenu.addEventListener("click", (event) => {
+    if (event.target === siteMenu) {
+      closeMenu();
+    }
+  });
 
   const bindMenuNavigation = (link) => {
     link.addEventListener("click", (event) => {
@@ -484,5 +492,41 @@ if (backToTopButtons.length > 0) {
   toggleBackToTopVisibility();
   window.addEventListener("scroll", toggleBackToTopVisibility, {
     passive: true,
+  });
+}
+
+// contact form mailto fallback
+const contactForm = document.querySelector("#contact-form");
+
+if (contactForm) {
+  const nameField = contactForm.querySelector('input[name="name"]');
+  const emailField = contactForm.querySelector('input[name="email"]');
+  const messageField = contactForm.querySelector('textarea[name="message"]');
+
+  contactForm.addEventListener("submit", (event) => {
+    if (!nameField || !emailField || !messageField) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) {
+      return;
+    }
+
+    const name = nameField.value.trim();
+    const email = emailField.value.trim();
+    const message = messageField.value.trim();
+
+    const subject = `New Hadeon inquiry from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    window.location.href = `mailto:hadeonstudio@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }

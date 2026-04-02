@@ -6,6 +6,8 @@ Hadeon is a premium agency website built with HTML, CSS, and JavaScript. The pro
 
 - `pages/index.html`
   Main homepage layout.
+- `index.html`
+  Root redirect entry for production hosting and GitHub Pages.
 - `pages/contact.html`
   Contact page layout.
 - `css/styles.css`
@@ -43,7 +45,7 @@ python -m http.server 8000
 
 Then open:
 
-- `http://localhost:8000/pages/index.html`
+- `http://localhost:8000/`
 - `http://localhost:8000/pages/contact.html`
 
 You can also open the HTML files directly in a browser, but a local server is better for media loading and path consistency.

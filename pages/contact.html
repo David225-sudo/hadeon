@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Boulevard to discuss brand design, web development, motion graphics, and art direction."
+      content="Contact Hadeon to discuss your website, product design, brand strategy, or next digital project."
     />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Boulevard Contact</title>
+    <title>Contact | Hadeon</title>
   </head>
   <body class="contact-page">
     <main class="contact-main">
@@ -99,20 +99,46 @@
           </div>
 
           <div class="contact-form-shell">
-            <form class="contact-form" id="contact-form">
+            <form
+              class="contact-form"
+              id="contact-form"
+              action="mailto:hadeonstudio@yahoo.com"
+              method="post"
+              enctype="text/plain"
+            >
               <label class="contact-field">
                 <span class="contact-field__label">Name</span>
-                <input type="text" placeholder="Enter your name" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  autocomplete="name"
+                  maxlength="80"
+                  required
+                />
               </label>
 
               <label class="contact-field">
                 <span class="contact-field__label">Email Address</span>
-                <input type="email" placeholder="Enter your e-mail" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your e-mail"
+                  autocomplete="email"
+                  maxlength="120"
+                  required
+                />
               </label>
 
               <label class="contact-field contact-field--message">
                 <span class="contact-field__label">Message</span>
-                <textarea placeholder="Your message..."></textarea>
+                <textarea
+                  name="message"
+                  placeholder="Your message..."
+                  rows="6"
+                  maxlength="2000"
+                  required
+                ></textarea>
               </label>
 
               <button class="contact-submit button-primary" type="submit">
