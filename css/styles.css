@@ -5795,6 +5795,7 @@ body {
     max-width: 19rem;
     margin-inline: auto;
     text-align: center;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -5811,6 +5812,7 @@ body {
 
   .solutions-top p,
   .faq-subtitle {
+    font-size: 1rem;
     line-height: 1.65;
   }
 
@@ -5840,7 +5842,7 @@ body {
     right: 0.85rem;
     bottom: 0.85rem;
     max-width: 15rem;
-    font-size: 0.76rem;
+    font-size: 0.8rem;
   }
 
   .vision-line {
@@ -5906,7 +5908,7 @@ body {
   }
 
   .offer-price--plans {
-    font-size: 1.95rem;
+    font-size: 2.15rem;
     margin-bottom: 2rem;
   }
 
@@ -5914,7 +5916,7 @@ body {
   .offer-subtitle,
   .offer-features-heading,
   .offer-features li {
-    font-size: 0.84rem;
+    font-size: 0.9rem;
   }
 
   .contact-cta-panel {
@@ -5930,6 +5932,15 @@ body {
     max-width: 100%;
   }
 
+  .faq-question span:first-child {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
   .site-footer__top {
     justify-items: center;
     text-align: center;
@@ -5937,6 +5948,8 @@ body {
 
   .site-footer__copy {
     max-width: 19rem;
+    font-size: 0.94rem;
+    line-height: 1.7;
   }
 
   .site-footer__socials {
@@ -5977,6 +5990,15 @@ body {
 
   .contact-form {
     width: min(100%, 24rem);
+  }
+
+  .contact-field__label {
+    font-size: 0.98rem;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 0.98rem;
   }
 
   .about-page-title {
@@ -6031,7 +6053,7 @@ body {
 
   .hero-left-bottom p {
     max-width: 17.5rem;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
   }
 
   .button-primary {
@@ -6061,10 +6083,25 @@ body {
     font-size: 2.15rem;
   }
 
+  .offer-price--plans {
+    font-size: 2rem;
+  }
+
+  .offer-meta p,
+  .offer-subtitle,
+  .offer-features-heading,
+  .offer-features li {
+    font-size: 0.88rem;
+  }
+
   .site-footer__copy,
   .contact-details,
   .contact-form {
     max-width: 18.5rem;
+  }
+
+  .site-footer__copy {
+    font-size: 0.92rem;
   }
 
   .contact-cta-title {
