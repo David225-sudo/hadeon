@@ -3689,6 +3689,18 @@ body.menu-open {
   font-weight: 400;
   line-height: 1.4;
   overflow-wrap: anywhere;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact-info-block a.contact-value,
+.contact-info-block a.contact-value:visited,
+.contact-info-block a.contact-value:hover,
+.contact-info-block a.contact-value:active,
+.contact-info-block a[x-apple-data-detectors] {
+  color: var(--white-color-shade-1) !important;
+  text-decoration: none !important;
+  font: inherit !important;
 }
 
 .contact-form-shell {
@@ -5814,6 +5826,15 @@ body {
     height: min(68vw, 290px);
   }
 
+  .video-brand {
+    top: 1rem;
+    left: 0.85rem;
+  }
+
+  .video-brand-text {
+    font-size: 1rem;
+  }
+
   .video-caption {
     left: 0.85rem;
     right: 0.85rem;
@@ -5876,6 +5897,12 @@ body {
 
   .offer-copy {
     min-height: auto;
+  }
+
+  .offer-button.button-primary {
+    width: 100%;
+    min-width: 0;
+    height: 2.9rem;
   }
 
   .offer-price--plans {
@@ -6019,6 +6046,15 @@ body {
 
   .video video {
     height: min(72vw, 250px);
+  }
+
+  .video-brand {
+    top: 0.9rem;
+    left: 0.75rem;
+  }
+
+  .video-brand-text {
+    font-size: 0.9rem;
   }
 
   .metrics-card__value {
