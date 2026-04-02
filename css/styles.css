@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +29,8 @@ body {
   font-family: var(--primary-font-family);
   line-height: 1.2;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -178,11 +184,13 @@ body {
 
 img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
 video {
   width: 100%;
+  display: block;
 }
 
 li {
@@ -1292,22 +1300,6 @@ body.menu-open {
   margin: 0 auto;
 }
 
-.offer-stage {
-  position: relative;
-  height: 144vh;
-}
-
-.offer-sticky {
-  position: sticky;
-  top: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--black-color-shade-1);
-  z-index: 2;
-}
-
 .offer-header {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1354,10 +1346,6 @@ body.menu-open {
   pointer-events: none;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-}
-
-.offer-card.is-active {
-  pointer-events: auto;
 }
 
 .offer-content {
@@ -1435,7 +1423,7 @@ body.menu-open {
 }
 
 .offer-features li::before {
-  content: "✓";
+  content: "\2713";
   position: absolute;
   left: 0;
   top: 0;
@@ -1494,14 +1482,6 @@ body.menu-open {
   .offer-shell {
     width: min(100%, 100%);
     padding: 0 1rem;
-  }
-
-  .offer-stage {
-    height: auto;
-  }
-
-  .offer-sticky {
-    position: static;
   }
 
   .offer-header {
@@ -5813,6 +5793,20 @@ body {
     border-radius: 0.9rem;
   }
 
+  .metrics-card,
+  .number-card,
+  .offer-card,
+  .contact-form,
+  .about-proof-card,
+  .about-process-card {
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  }
+
+  .contact-form {
+    border: 1px solid rgba(239, 238, 236, 0.12);
+    background: rgba(0, 0, 0, 0.48);
+  }
+
   .numbers-grid {
     gap: 0.85rem;
   }
@@ -5909,4 +5903,5 @@ body {
     max-width: 18.5rem;
   }
 }
+
 
