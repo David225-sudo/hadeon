@@ -3300,7 +3300,7 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .about-main {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.9rem;
   }
 
   .about-hero,
@@ -3308,12 +3308,12 @@ body.menu-open {
   .about-proof,
   .about-process,
   .about-recent-work {
-    padding: 3.4rem 0;
+    padding: 3.9rem 0;
   }
 
   .about-page-title {
     font-size: 3rem;
-    margin-bottom: 2.35rem;
+    margin-bottom: 2.6rem;
   }
 
   .about-hero__copy {
@@ -3324,7 +3324,7 @@ body.menu-open {
   .about-feature__row,
   .about-recent-work__intro,
   .about-recent-work__layout {
-    gap: 1.75rem;
+    gap: 2rem;
   }
 
   .about-hero__button {
@@ -3382,6 +3382,7 @@ body.menu-open {
   .about-proof__grid,
   .about-process__grid {
     grid-template-columns: 1fr;
+    gap: 1.35rem;
   }
 
   .about-proof-card,
@@ -3424,11 +3425,11 @@ body.menu-open {
 
   .about-process__title {
     font-size: 2.4rem;
-    margin-bottom: 2.35rem;
+    margin-bottom: 2.6rem;
   }
 
   .about-process-card {
-    padding: 1.65rem 1.35rem;
+    padding: 1.8rem 1.45rem;
   }
 
   .about-process-card__number {
@@ -5299,7 +5300,7 @@ body {
   }
 
   .about-hero__bottom {
-    gap: 1.9rem;
+    gap: 2.25rem;
   }
 
   .about-hero__socials {
@@ -5313,11 +5314,11 @@ body {
   }
 
   .about-proof__grid {
-    gap: 1.15rem;
+    gap: 1.4rem;
   }
 
   .about-proof-card {
-    padding: 1.1rem;
+    padding: 1.25rem;
     border-radius: 0.8rem;
   }
 
@@ -5330,7 +5331,7 @@ body {
   }
 
   .about-process-card {
-    padding: 1.35rem 1.1rem 1.15rem;
+    padding: 1.55rem 1.2rem 1.3rem;
     border-radius: 0.9rem;
   }
 
@@ -5339,7 +5340,7 @@ body {
   }
 
   .about-recent-work__layout {
-    gap: 1.35rem;
+    gap: 1.6rem;
   }
 
   .about-recent-work__media {
@@ -5348,7 +5349,7 @@ body {
   }
 
   .about-recent-work__content {
-    gap: 1.15rem;
+    gap: 1.35rem;
   }
 
   .project-shell,
