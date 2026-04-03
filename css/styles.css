@@ -456,7 +456,7 @@ body.menu-open {
 /* hero section */
 .hero-section {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   min-height: 100vh;
   height: 80vh;
   padding: 3rem 3rem 2.5rem;
@@ -3308,16 +3308,23 @@ body.menu-open {
   .about-proof,
   .about-process,
   .about-recent-work {
-    padding: 3rem 0;
+    padding: 3.4rem 0;
   }
 
   .about-page-title {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.35rem;
   }
 
   .about-hero__copy {
     font-size: 0.92rem;
+  }
+
+  .about-hero__bottom,
+  .about-feature__row,
+  .about-recent-work__intro,
+  .about-recent-work__layout {
+    gap: 1.75rem;
   }
 
   .about-hero__button {
@@ -3417,11 +3424,11 @@ body.menu-open {
 
   .about-process__title {
     font-size: 2.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.35rem;
   }
 
   .about-process-card {
-    padding: 1.5rem 1.25rem;
+    padding: 1.65rem 1.35rem;
   }
 
   .about-process-card__number {
@@ -5292,30 +5299,30 @@ body {
   }
 
   .about-hero__bottom {
-    gap: 1.4rem;
+    gap: 1.9rem;
   }
 
   .about-hero__socials {
-    max-width: 18rem;
+    max-width: 20rem;
     margin-inline: auto;
     justify-content: center;
   }
 
   .about-hero__socials a {
-    padding: 0.72rem 0.95rem;
+    padding: 0.78rem 1rem;
   }
 
   .about-proof__grid {
-    gap: 0.85rem;
+    gap: 1.15rem;
   }
 
   .about-proof-card {
-    padding: 0.9rem;
+    padding: 1.1rem;
     border-radius: 0.8rem;
   }
 
   .about-proof-card--quote {
-    gap: 0;
+    gap: 0.35rem;
   }
 
   .about-proof__quote-mark {
@@ -5323,7 +5330,7 @@ body {
   }
 
   .about-process-card {
-    padding: 1.15rem 1rem 1rem;
+    padding: 1.35rem 1.1rem 1.15rem;
     border-radius: 0.9rem;
   }
 
@@ -5332,7 +5339,7 @@ body {
   }
 
   .about-recent-work__layout {
-    gap: 1rem;
+    gap: 1.35rem;
   }
 
   .about-recent-work__media {
@@ -5341,7 +5348,7 @@ body {
   }
 
   .about-recent-work__content {
-    gap: 0.95rem;
+    gap: 1.15rem;
   }
 
   .project-shell,
@@ -5561,7 +5568,7 @@ body {
   }
 
   .hero-left-top h1 {
-    max-width: 18ch;
+    max-width: 15ch;
   }
 
   .solutions-top {
