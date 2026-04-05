@@ -1,4 +1,81 @@
-// button amination
+// button animation
+const body = document.body;
+const isHomepage = body?.dataset.page === "home";
+
+// page loader
+if (body && isHomepage) {
+  const pageLoader = document.createElement("div");
+  pageLoader.className = "page-loader";
+  pageLoader.setAttribute("aria-hidden", "true");
+  pageLoader.innerHTML = `
+    <div class="page-loader__inner">
+      <div class="page-loader__count" data-page-loader-count>1%</div>
+      <div class="page-loader__label">Loading</div>
+    </div>
+  `;
+
+  const loaderCount = pageLoader.querySelector("[data-page-loader-count]");
+  const loaderStart = performance.now();
+  let currentProgress = 1;
+  let targetProgress = 94;
+  let isLoaderComplete = false;
+
+  body.classList.add("page-loading");
+  body.appendChild(pageLoader);
+
+  const renderLoaderProgress = (value) => {
+    if (loaderCount) {
+      loaderCount.textContent = `${value}%`;
+    }
+  };
+
+  const completeLoader = () => {
+    if (isLoaderComplete) {
+      return;
+    }
+
+    isLoaderComplete = true;
+    targetProgress = 100;
+  };
+
+  const animateLoader = () => {
+    if (currentProgress < targetProgress) {
+      currentProgress += currentProgress < 70 ? 4 : currentProgress < 90 ? 2 : 1;
+      currentProgress = Math.min(currentProgress, targetProgress);
+      renderLoaderProgress(currentProgress);
+    }
+
+    if (!isLoaderComplete || currentProgress < 100) {
+      window.requestAnimationFrame(animateLoader);
+      return;
+    }
+
+    window.setTimeout(() => {
+      pageLoader.classList.add("is-hidden");
+      body.classList.remove("page-loading");
+
+      window.setTimeout(() => {
+        pageLoader.remove();
+      }, 360);
+    }, 140);
+  };
+
+  const minimumLoaderMs = 420;
+
+  window.addEventListener(
+    "load",
+    () => {
+      const elapsed = performance.now() - loaderStart;
+      const remaining = Math.max(minimumLoaderMs - elapsed, 0);
+      window.setTimeout(completeLoader, remaining);
+    },
+    { once: true }
+  );
+
+  window.setTimeout(completeLoader, 1800);
+  window.requestAnimationFrame(animateLoader);
+}
+
 const primaryButtons = document.querySelectorAll(".button-primary");
 const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
 
