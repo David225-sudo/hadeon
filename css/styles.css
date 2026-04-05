@@ -1452,12 +1452,6 @@ body.menu-open {
   max-width: 14.5rem;
 }
 
-.offer-price__amount {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.14rem;
-}
-
 .offer-features-block {
   max-width: 14.5rem;
   margin-bottom: 0.85rem;
@@ -1687,25 +1681,12 @@ body.menu-open {
 .offer-price {
   font-weight: 400;
   color: #f3f1ee;
-  flex-wrap: wrap;
 }
 
 .offer-price--plans {
   font-size: 2.2rem;
   margin-bottom: 3rem;
-  gap: 0.38rem;
-}
-
-.offer-price--plans .offer-price__amount {
-  gap: 0;
-}
-
-.offer-price__prefix {
-  font-size: 0.42em;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: rgba(240, 239, 236, 0.72);
+  gap: 0.06rem;
 }
 
 .offer-price--plans .offer-price__currency {

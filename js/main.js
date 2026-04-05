@@ -1,9 +1,18 @@
 // button animation
 const body = document.body;
 const isHomepage = body?.dataset.page === "home";
+const HOMEPAGE_LOADER_STORAGE_KEY = "hadeon-home-loader-seen-v2";
+let hasSeenHomepageLoader = false;
+
+try {
+  hasSeenHomepageLoader =
+    localStorage.getItem(HOMEPAGE_LOADER_STORAGE_KEY) === "1";
+} catch (error) {
+  hasSeenHomepageLoader = false;
+}
 
 // page loader
-if (body && isHomepage) {
+if (body && isHomepage && !hasSeenHomepageLoader) {
   const pageLoader = document.createElement("div");
   pageLoader.className = "page-loader";
   pageLoader.setAttribute("aria-hidden", "true");
@@ -17,7 +26,7 @@ if (body && isHomepage) {
   const loaderCount = pageLoader.querySelector("[data-page-loader-count]");
   const loaderStart = performance.now();
   let currentProgress = 1;
-  let targetProgress = 94;
+  let targetProgress = 97;
   let isLoaderComplete = false;
 
   body.classList.add("page-loading");
@@ -36,13 +45,34 @@ if (body && isHomepage) {
 
     isLoaderComplete = true;
     targetProgress = 100;
+
+    try {
+      localStorage.setItem(HOMEPAGE_LOADER_STORAGE_KEY, "1");
+    } catch (error) {
+      // Ignore storage failures and just continue without persistence.
+    }
   };
 
   const animateLoader = () => {
     if (currentProgress < targetProgress) {
-      currentProgress += currentProgress < 70 ? 4 : currentProgress < 90 ? 2 : 1;
-      currentProgress = Math.min(currentProgress, targetProgress);
-      renderLoaderProgress(currentProgress);
+      let step = 0.55;
+
+      if (currentProgress >= 20 && currentProgress < 50) {
+        step = 0.9;
+      } else if (currentProgress >= 50 && currentProgress < 78) {
+        step = 1.85;
+      } else if (currentProgress >= 78 && currentProgress < 92) {
+        step = 1.05;
+      } else if (currentProgress >= 92 && currentProgress < 98) {
+        step = 0.3;
+      } else if (currentProgress >= 98 && currentProgress < 99) {
+        step = 0.12;
+      } else if (currentProgress >= 99) {
+        step = 0.08;
+      }
+
+      currentProgress = Math.min(currentProgress + step, targetProgress);
+      renderLoaderProgress(Math.round(currentProgress));
     }
 
     if (!isLoaderComplete || currentProgress < 100) {
@@ -60,7 +90,7 @@ if (body && isHomepage) {
     }, 140);
   };
 
-  const minimumLoaderMs = 420;
+  const minimumLoaderMs = 2200;
 
   window.addEventListener(
     "load",
@@ -72,7 +102,7 @@ if (body && isHomepage) {
     { once: true }
   );
 
-  window.setTimeout(completeLoader, 1800);
+  window.setTimeout(completeLoader, 3600);
   window.requestAnimationFrame(animateLoader);
 }
 
