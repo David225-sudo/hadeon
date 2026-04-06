@@ -1686,7 +1686,7 @@ body.menu-open {
 .offer-price--plans {
   font-size: 2.2rem;
   margin-bottom: 3rem;
-  gap: 0.2rem;
+  gap: 0.8rem;
 }
 
 .offer-price__prefix {
