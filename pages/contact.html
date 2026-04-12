@@ -139,10 +139,15 @@
               />
 
               <label class="contact-field">
-                <span class="contact-field__label">Name</span>
+                <span
+                  class="contact-field__label contact-field__label--hidden"
+                  aria-hidden="true"
+                  >Name</span
+                >
                 <input
                   type="text"
                   name="name"
+                  aria-label="Name"
                   placeholder="Enter your name"
                   autocomplete="name"
                   maxlength="80"
@@ -151,10 +156,15 @@
               </label>
 
               <label class="contact-field">
-                <span class="contact-field__label">Email Address</span>
+                <span
+                  class="contact-field__label contact-field__label--hidden"
+                  aria-hidden="true"
+                  >Email Address</span
+                >
                 <input
                   type="email"
                   name="email"
+                  aria-label="Email Address"
                   placeholder="Enter your e-mail"
                   autocomplete="email"
                   maxlength="120"
@@ -163,9 +173,14 @@
               </label>
 
               <label class="contact-field contact-field--message">
-                <span class="contact-field__label">Message</span>
+                <span
+                  class="contact-field__label contact-field__label--hidden"
+                  aria-hidden="true"
+                  >Message</span
+                >
                 <textarea
                   name="message"
+                  aria-label="Message"
                   placeholder="Your message..."
                   rows="6"
                   maxlength="2000"

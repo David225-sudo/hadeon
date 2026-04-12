@@ -3818,6 +3818,10 @@ body.menu-open {
   margin-bottom: 0.85rem;
 }
 
+.contact-field__label--hidden {
+  visibility: hidden;
+}
+
 .contact-field input,
 .contact-field textarea {
   width: 100%;
